@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Ordem de Serviço</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Atualizar Ordem de Serviço</h2>
+    <form action="{{ url_for('update_ordem', ordem_id=ordem.id) }}" method="POST">
+        Descrição do Problema: <input type="text" name="descricao_problema" value="{{ ordem.descricao_problema }}" required>
+        Peças Utilizadas: <input type="text" name="pecas_utilizadas" value="{{ ordem.pecas_utilizadas }}">
+        Serviços Executados: <input type="text" name="servicos_executados" value="{{ ordem.servicos_executados }}">
+        Status: <input type="text" name="status" value="{{ ordem.status }}" required>
+        Mecânico Responsável: <input type="text" name="mecanico_responsavel" value="{{ ordem.mecanico_responsavel }}">
+        <button type="submit">Salvar Alterações</button>
+    </form>
+</body>
+</html>

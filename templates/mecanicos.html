@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="main">
+    <div class="col-sm-12 col-md-12 well" id="content">
+        <h1>Mecânicos</h1>
+        
+        <form action="{{ url_for('cadastrar_mecanico') }}" method="post">
+            <div class="form-group">
+                <label for="nome_mecanico">Nome do Mecânico</label>
+                <input type="text" class="form-control" id="nome_mecanico" name="nome_mecanico" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Mecânico</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Lista de Mecânicos</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for mecanico in mecanicos %}
+                <tr>
+                    <td>{{ mecanico.idMecanico }}</td>
+                    <td>{{ mecanico.nomeMecanico }}</td>
+                    <td>
+                        <a href="{{ url_for('editar_mecanico', id=mecanico.idMecanico) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('excluir_mecanico', id=mecanico.idMecanico) }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-sm">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

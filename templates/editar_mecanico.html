@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="main">
+    <div class="col-sm-12 col-md-12 well" id="content">
+        <h1>Editar Mecânico</h1>
+        
+        <form action="{{ url_for('editar_mecanico', id=mecanico.idMecanico) }}" method="post">
+            <div class="form-group">
+                <label for="nomeMecanico">Nome do Mecânico</label>
+                <input type="text" class="form-control" id="nomeMecanico" name="nomeMecanico" value="{{ mecanico.nomeMecanico }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <a href="{{ url_for('mecanicos') }}" class="btn btn-link">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

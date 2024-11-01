@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="main">
+    <div class="col-sm-12 col-md-12 well" id="content">
+        <h1>Editar Carro</h1>
+        
+        <form action="{{ url_for('editar_carro', id=carro.idCarro) }}" method="post">
+            <div class="form-group">
+                <label for="placa">Placa</label>
+                <input type="text" class="form-control" id="placa" name="placa" value="{{ carro.placa }}" required>
+            </div>
+            <div class="form-group">
+                <label for="modelo">Modelo</label>
+                <input type="text" class="form-control" id="modelo" name="modelo" value="{{ carro.modelo }}" required>
+            </div>
+            <div class="form-group">
+                <label for="ano">Ano</label>
+                <input type="number" class="form-control" id="ano" name="ano" value="{{ carro.ano }}" required>
+            </div>
+            <div class="form-group">
+                <label for="idCliente">Cliente</label>
+                <select class="form-control" id="idCliente" name="idCliente" required>
+                    {% for cliente in clientes %}
+                        <option value="{{ cliente.idCliente }}" {% if cliente.idCliente == carro.idCliente %}selected{% endif %}>
+                            {{ cliente.nome }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <a href="{{ url_for('carros') }}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

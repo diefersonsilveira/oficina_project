@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="main">
+    <div class="col-sm-12 col-md-12 well" id="content">
+        <h1>Editar Ordem de Serviço</h1>
+        
+        <form action="{{ url_for('editar_ordem_servico', id=ordem_servico.idOS) }}" method="post">
+            <div class="form-group">
+                <label for="descricaoProblema">Descrição do Problema</label>
+                <input type="text" class="form-control" id="descricaoProblema" name="descricaoProblema" value="{{ ordem_servico.descricaoProblema }}" required>
+            </div>
+            <div class="form-group">
+                <label for="status">Status</label>
+                <input type="text" class="form-control" id="status" name="status" value="{{ ordem_servico.status }}" required>
+            </div>
+            <div class="form-group">
+                <label for="idCarro">Carro (Cliente + Modelo)</label>
+                <select class="form-control" id="idCarro" name="idCarro" required>
+                    {% for carro in carros %}
+                    <option value="{{ carro.idCarro }}" {% if ordem_servico.idCarro == carro.idCarro %}selected{% endif %}>{{ carro.carro_cliente }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="idMecanico">Mecânico</label>
+                <select class="form-control" id="idMecanico" name="idMecanico" required>
+                    {% for mecanico in mecanicos %}
+                    <option value="{{ mecanico.idMecanico }}" {% if ordem_servico.idMecanico == mecanico.idMecanico %}selected{% endif %}>{{ mecanico.nomeMecanico }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="pecasUtilizadas">Peças Utilizadas</label>
+                <input type="text" class="form-control" id="pecasUtilizadas" name="pecasUtilizadas" value="{{ ordem_servico.pecasUtilizadas }}" required>
+            </div>
+            <div class="form-group">
+                <label for="servicosExecutados">Serviços Executados</label>
+                <input type="text" class="form-control" id="servicosExecutados" name="servicosExecutados" value="{{ ordem_servico.servicosExecutados }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+            <a href="{{ url_for('ordens_servico') }}" class="btn btn-link">Cancelar</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="main">
+    <div class="col-sm-12 col-md-12 well" id="content">
+        <h1>Bem-vindo, Admin!</h1>
+        <div id="datetime" style="font-size: 24px; font-weight: bold;"></div>
+    </div>
+</div>
+<script>
+    function updateTime() {
+        const now = new Date();
+        const options = { 
+            timeZone: 'America/Sao_Paulo', 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric', 
+            hour: '2-digit', 
+            minute: '2-digit', 
+            second: '2-digit' 
+        };
+        const brTime = now.toLocaleString('pt-BR', options);
+        document.getElementById('datetime').innerHTML = brTime;
+    }
+
+    setInterval(updateTime, 1000);
+    updateTime();
+</script>
+{% endblock %}
