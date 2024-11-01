@@ -1,0 +1,66 @@
+.form-inline {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-group input, .form-group button {
+    width: 100%;
+}
+
+.webcam-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 0;
+    width: 320px;
+}
+
+.webcam-container video, .webcam-container canvas {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+}
+
+.table-container {
+    width: 100%;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+td img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    line-height: 1.5;
+}

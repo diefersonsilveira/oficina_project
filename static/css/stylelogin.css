@@ -1,0 +1,74 @@
+body, html {
+    height: 100%;
+    background-image: url('/static/images/background.webp'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #d3d3d3;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.main {
+    margin-top: 70px;
+}
+
+h1.title { 
+    font-size: 50px;
+    font-family: 'Passion One', cursive; 
+    font-weight: 400; 
+}
+
+hr {
+    width: 10%;
+    color: #fff;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-center {
+    margin: 200px auto 0 auto; /* Margem superior de 600px e centralização horizontal */
+    max-width: 400px; /* Ajuste do tamanho do quadro */
+    padding: 40px 40px;
+}
+
+.main-login {
+    background-color: #fff;
+    border-radius: 15px; /* Bordas arredondadas */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+}
+
+.login-button {
+    margin-top: 5px;
+}
+
+.login-register {
+    font-size: 11px;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px; /* Ajuste o tamanho da fonte conforme desejado */
+    font-family: 'Passion One', cursive; 
+    font-weight: 400;
+    margin-bottom: 20px; /* Adiciona espaço entre o título e o formulário */
+}
+
+hr {
+    width: 50%; /* Aumenta o tamanho da linha abaixo do título */
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-top: 2px solid #ddd;
+}
